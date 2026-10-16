@@ -1108,7 +1108,7 @@ function startCountdown(){
   if (oState === 'count') return;
   oState = 'count'; cdStart = performance.now(); lastSec = 3; Haptic.beat();
   const loop = t => {
-    const p = Math.min(1, (t - cdStart) / 3000); setProg(p);
+    const p = Math.min(1, (t - cdStart) / 2000); setProg(p);
     const sec = 3 - Math.floor(p * 3);
     if (sec < lastSec && sec > 0){ lastSec = sec; Haptic.beat(); }
     if (p >= 1){ assignOrder(); return; }
